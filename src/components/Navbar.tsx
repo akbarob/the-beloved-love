@@ -27,10 +27,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between  bg-transparent backdrop-blur-sm shadow-sm">
+    <nav className="sticky top-0 left-0 right-0 z-50 px-10 py-3 flex items-center justify-between  bg-transparent backdrop-blur-sm shadow-sm">
       <Link href="/" className="flex flex-col items-center">
         <CrownIcon />
-        <span className="font-playfair text-2xl font-bold tracking-widest text-[#2e3328]">TBL</span>
+        <span className="font-playfair text-xl font-bold tracking-widest text-[#2e3328]">TBL</span>
         <span className="font-lato text-[9px] tracking-[0.25em] uppercase text-[#4a5240]">The Beloved Love</span>
         <span className="font-lato text-[9px] tracking-[0.25em] uppercase text-[#4a5240]">initiative</span>
       </Link>

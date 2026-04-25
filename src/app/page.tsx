@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 function CrownIcon() {
   return (
@@ -18,6 +21,100 @@ function CrownIcon() {
       <circle cx="6.5" cy="10" r="1.4" fill="#fff8e7" />
       <circle cx="29.5" cy="10" r="1.4" fill="#fff8e7" />
     </svg>
+  );
+}
+
+const testimonials = [
+  {
+    quote: "I found myself again and discovered my true identity in Christ.",
+    author: "Habibat"
+  },
+  {
+    quote: "This ministry changed my life and healed my heart.",
+    author: "Salawudeen"
+  },
+  {
+    quote: "Through this foundation, I learned to walk boldly in my purpose.",
+    author: "Churchill"
+  },
+  {
+    quote: "The Bible Recitation Movement transformed how I connect with God's Word.",
+    author: "Love"
+  },
+  {
+    quote: "I experienced true emotional healing and restoration here.",
+    author: "Habibat"
+  },
+  {
+    quote: "This community helped me rediscover who I am in God.",
+    author: "Akbar"
+  },
+];
+
+function TestimonialCarousel() {
+  const [current, setCurrent] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const itemsPerSlide = isMobile ? 1 : 2;
+  const slides = [];
+  
+  for (let i = 0; i < testimonials.length; i += itemsPerSlide) {
+    slides.push(testimonials.slice(i, i + itemsPerSlide));
+  }
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  return (
+    <div className="max-w-5xl mx-auto mb-12 relative">
+      <div className="overflow-hidden">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {slides.map((slide, slideIdx) => (
+            <div key={slideIdx} className="w-full flex-shrink-0 px-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {slide.map((t, i) => (
+                  <div key={i} className="bg-white/60 backdrop-blur-sm rounded-xl p-8 shadow-sm">
+                    <p className="font-cormorant text-5xl text-[#8a7a8a] leading-none mb-3">&ldquo;</p>
+                    <p className="font-cormorant italic text-lg text-[#3a3a3a] leading-relaxed mb-4">
+                      {t.quote}
+                    </p>
+                    <p className="font-lato text-sm text-[#6a6a6a] tracking-wide">— {t.author}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation dots */}
+      <div className="flex justify-center gap-2 mt-8">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-2 h-2 rounded-full transition-all ${
+              i === current ? 'bg-[#4a5240] w-8' : 'bg-[#4a5240]/30'
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -181,6 +278,47 @@ export default function Home() {
               className="inline-block px-8 py-3 bg-[#2e3328] text-[#f5f0e8] font-lato text-sm tracking-widest uppercase rounded-full hover:bg-[#4a5240] transition-colors"
             >
               Read Full Story
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIES */}
+      <section className="relative py-20 px-6 text-center overflow-hidden"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(200, 210, 190, 0.4), rgba(210, 220, 200, 0.5)), linear-gradient(135deg, #d8ddd0 0%, #c8cfc0 50%, #b8c0a8 100%)',
+        }}
+      >
+        {/* Soft sky overlay */}
+        <div className="absolute inset-0 opacity-40"
+          style={{
+            background: 'radial-gradient(ellipse at 50% 80%, rgba(255, 230, 180, 0.5) 0%, rgba(200, 210, 185, 0.3) 50%, transparent 100%)',
+          }}
+        />
+
+        <div className="relative z-10">
+          <p className="font-lato text-xs tracking-[0.3em] uppercase text-[#4a5240] mb-10">Testimonies</p>
+
+          {/* Testimonial carousel */}
+          <TestimonialCarousel />
+
+          {/* CTA message */}
+          <h2 className="font-lato text-2xl md:text-3xl tracking-wide text-[#3a3a3a] mb-8 font-light mt-12">
+            You are not lost. You are <strong className="font-semibold">becoming.</strong>
+          </h2>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/get-involved"
+              className="px-8 py-3 bg-[#2e3328] text-[#f5f0e8] font-lato text-sm tracking-widest uppercase rounded-full hover:bg-[#4a5240] transition-colors"
+            >
+              Get Involved
+            </Link>
+            <Link
+              href="/donate"
+              className="px-8 py-3 border border-[#2e3328] text-[#2e3328] font-lato text-sm tracking-widest uppercase rounded-full hover:bg-[#2e3328] hover:text-[#f5f0e8] transition-colors"
+            >
+              Donate
             </Link>
           </div>
         </div>
