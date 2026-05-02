@@ -1,7 +1,18 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { siteUrl, siteName } from '@/app/metadata';
 
-export const metadata = {
-  title: 'Programs | The Beloved Love Initiative',
+export const metadata: Metadata = {
+  title: 'Programs',
+  description:
+    'Explore TBLI programs including the Bible Recitation Movement, Identity & Spiritual Growth, Emotional Healing, Community Outreach, and A Moment With Love podcast.',
+  alternates: { canonical: `${siteUrl}/programs` },
+  openGraph: {
+    title: `Programs | ${siteName}`,
+    description:
+      'Every program is designed to restore, equip, and empower individuals to walk in wholeness — from the Bible Recitation Movement to A Moment With Love.',
+    url: `${siteUrl}/programs`,
+  },
 };
 
 const programs = [

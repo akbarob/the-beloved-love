@@ -1,5 +1,16 @@
-export const metadata = {
-  title: 'Contact | The Beloved Love initiative',
+import type { Metadata } from 'next';
+import { siteUrl, siteName } from '@/app/metadata';
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description:
+    'Get in touch with The Beloved Love Initiative. We would love to hear from you — whether you have a question, a story to share, or want to connect.',
+  alternates: { canonical: `${siteUrl}/contact` },
+  openGraph: {
+    title: `Contact | ${siteName}`,
+    description: 'Reach out to The Beloved Love Initiative. We are a community-driven foundation — let\'s walk this journey together.',
+    url: `${siteUrl}/contact`,
+  },
 };
 
 export default function ContactPage() {

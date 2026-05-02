@@ -1,8 +1,18 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { siteUrl, siteName } from '@/app/metadata';
 
-export const metadata = {
-  title: 'About | The Beloved Love Initiative',
-  description: 'Helping individuals rediscover who they are in God and walk boldly into their purpose.',
+export const metadata: Metadata = {
+  title: 'About Us',
+  description:
+    'Learn about The Beloved Love Initiative — a movement helping individuals rediscover who they are in God and walk boldly into their purpose. Founded by Habibat Salawudeen.',
+  alternates: { canonical: `${siteUrl}/about` },
+  openGraph: {
+    title: `About Us | ${siteName}`,
+    description:
+      'Helping individuals rediscover who they are in God and walk boldly into their purpose. Learn about our mission, vision, and the story behind TBLI.',
+    url: `${siteUrl}/about`,
+  },
 };
 
 export default function AboutPage() {

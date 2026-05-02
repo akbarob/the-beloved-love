@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8c84a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8960c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8ebe0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4d9c8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" stroke="#d4af37" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Crown -->
+  <g transform="translate(100, 42)">
+    <path d="M-24 20 L-18 4 L-8 13 L0 -4 L8 13 L18 4 L24 20 Z"
+      fill="url(#goldGrad)" stroke="#b8960c" stroke-width="0.6" stroke-linejoin="round"/>
+    <rect x="-24" y="20" width="48" height="4.5" rx="2.25"
+      fill="url(#goldGrad)" stroke="#b8960c" stroke-width="0.4"/>
+    <circle cx="0" cy="-1" r="2.8" fill="#fff8e7" opacity="0.9"/>
+    <circle cx="-18" cy="8" r="2" fill="#fff8e7" opacity="0.8"/>
+    <circle cx="18" cy="8" r="2" fill="#fff8e7" opacity="0.8"/>
+  </g>
+
+  <!-- TBL -->
+  <text
+    x="100" y="118"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="46"
+    font-weight="700"
+    letter-spacing="6"
+    text-anchor="middle"
+    fill="#2e3328"
+  >TBL</text>
+
+  <!-- Gold rule -->
+  <line x1="44" y1="126" x2="156" y2="126" stroke="url(#goldGrad)" stroke-width="1" opacity="0.7"/>
+
+  <!-- TBLI text -->
+  <text
+    x="100" y="144"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="8"
+    letter-spacing="5"
+    text-anchor="middle"
+    fill="#4a5240"
+  >INITIATIVE</text>
+</svg>

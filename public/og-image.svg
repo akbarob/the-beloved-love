@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8ebe0"/>
+      <stop offset="40%" style="stop-color:#d4d9c8"/>
+      <stop offset="100%" style="stop-color:#b8c0a8"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8c84a"/>
+      <stop offset="50%" style="stop-color:#d4af37"/>
+      <stop offset="100%" style="stop-color:#b8960c"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="75%" cy="15%" r="50%">
+      <stop offset="0%" style="stop-color:#ffe878;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#ffe878;stop-opacity:0"/>
+    </radialGradient>
+    <!-- Left drape -->
+    <clipPath id="leftDrape">
+      <polygon points="0,0 340,0 240,630 0,630"/>
+    </clipPath>
+    <!-- Right drape -->
+    <clipPath id="rightDrape">
+      <polygon points="860,0 1200,0 1200,630 960,630"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Fabric drapes -->
+  <rect width="1200" height="630" fill="url(#glowGrad)"/>
+  <rect x="0" y="0" width="340" height="630" fill="rgba(240,238,228,0.35)" clip-path="url(#leftDrape)"/>
+  <rect x="860" y="0" width="340" height="630" fill="rgba(235,232,218,0.3)" clip-path="url(#rightDrape)"/>
+
+  <!-- Subtle center veil -->
+  <ellipse cx="600" cy="200" rx="300" ry="220" fill="rgba(255,252,240,0.18)"/>
+
+  <!-- Crown -->
+  <g transform="translate(600, 120)">
+    <path d="M-52 46 L-40 8 L-18 28 L0 -8 L18 28 L40 8 L52 46 Z"
+      fill="url(#goldGrad)" stroke="#b8960c" stroke-width="1.2" stroke-linejoin="round"/>
+    <rect x="-52" y="46" width="104" height="10" rx="5"
+      fill="url(#goldGrad)" stroke="#b8960c" stroke-width="0.8"/>
+    <circle cx="0" cy="-2" r="6" fill="#fff8e7" opacity="0.9"/>
+    <circle cx="-40" cy="16" r="4.5" fill="#fff8e7" opacity="0.8"/>
+    <circle cx="40" cy="16" r="4.5" fill="#fff8e7" opacity="0.8"/>
+    <circle cx="-20" cy="6" r="2.5" fill="#fff8e7" opacity="0.6"/>
+    <circle cx="20" cy="6" r="2.5" fill="#fff8e7" opacity="0.6"/>
+  </g>
+
+  <!-- TBL -->
+  <text x="600" y="270"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="110" font-weight="700" letter-spacing="22"
+    text-anchor="middle" fill="#2e3328">TBL</text>
+
+  <!-- Gold divider -->
+  <line x1="260" y1="290" x2="940" y2="290" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- THE BELOVED LOVE -->
+  <text x="600" y="330"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="22" letter-spacing="14"
+    text-anchor="middle" fill="#2e3328">THE BELOVED LOVE</text>
+
+  <!-- INITIATIVE -->
+  <text x="600" y="362"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="16" letter-spacing="18"
+    text-anchor="middle" fill="#4a5240">INITIATIVE</text>
+
+  <!-- Side flourishes -->
+  <line x1="180" y1="346" x2="340" y2="346" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+  <circle cx="176" cy="346" r="3" fill="#d4af37" opacity="0.5"/>
+  <line x1="860" y1="346" x2="1020" y2="346" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+  <circle cx="1024" cy="346" r="3" fill="#d4af37" opacity="0.5"/>
+
+  <!-- Tagline -->
+  <text x="600" y="430"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="18" font-style="italic" letter-spacing="3"
+    text-anchor="middle" fill="#4a5240" opacity="0.8">
+    Discovering Purpose. Restoring Identity. Awakening Love. Transforming Lives.
+  </text>
+
+  <!-- Bottom border accent -->
+  <rect x="0" y="618" width="1200" height="12" fill="url(#goldGrad)" opacity="0.4"/>
+</svg>

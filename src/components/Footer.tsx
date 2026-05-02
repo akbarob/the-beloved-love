@@ -1,9 +1,20 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
     <footer className="bg-[#2e3328] text-[#c8c4b8] py-10 px-6">
       <div className="max-w-4xl mx-auto flex flex-col items-center gap-6">
+        {/* Logo */}
+        <Link href="/" aria-label="The Beloved Love Initiative">
+          <Image
+            src="/logo.svg"
+            alt="The Beloved Love Initiative"
+            width={180}
+            height={90}
+            className="h-16 w-auto opacity-80 hover:opacity-100 transition-opacity brightness-0 invert"
+          />
+        </Link>
         {/* Social icons */}
         <div className="flex gap-6">
           <a href="#" aria-label="Facebook" className="hover:text-[#d4af37] transition-colors">

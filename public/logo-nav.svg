@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" width="120" height="80">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8c84a"/>
+      <stop offset="50%" style="stop-color:#d4af37"/>
+      <stop offset="100%" style="stop-color:#b8960c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Crown -->
+  <g transform="translate(60, 20)">
+    <path d="M-18 14 L-13 3 L-6 9 L0 -3 L6 9 L13 3 L18 14 Z"
+      fill="url(#goldGrad)" stroke="#b8960c" stroke-width="0.5" stroke-linejoin="round"/>
+    <rect x="-18" y="14" width="36" height="3.5" rx="1.75"
+      fill="url(#goldGrad)" stroke="#b8960c" stroke-width="0.3"/>
+    <circle cx="0" cy="-0.5" r="2" fill="#fff8e7" opacity="0.9"/>
+    <circle cx="-13" cy="5" r="1.5" fill="#fff8e7" opacity="0.8"/>
+    <circle cx="13" cy="5" r="1.5" fill="#fff8e7" opacity="0.8"/>
+  </g>
+
+  <!-- TBL -->
+  <text
+    x="60" y="62"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="28"
+    font-weight="700"
+    letter-spacing="5"
+    text-anchor="middle"
+    fill="#2e3328"
+  >TBL</text>
+</svg>

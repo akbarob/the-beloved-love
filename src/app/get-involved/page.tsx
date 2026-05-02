@@ -1,7 +1,18 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import { siteUrl, siteName } from '@/app/metadata';
 
-export const metadata = {
-  title: 'Get Involved | The Beloved Love initiative',
+export const metadata: Metadata = {
+  title: 'Get Involved',
+  description:
+    'Join The Beloved Love Initiative — volunteer, serve, pray, spread the word, or become a financial partner. Transformation happens when willing hearts become active hands.',
+  alternates: { canonical: `${siteUrl}/get-involved` },
+  openGraph: {
+    title: `Get Involved | ${siteName}`,
+    description:
+      'There are many ways to be part of this movement. Find the one that resonates with your heart and become a living part of the work we are doing.',
+    url: `${siteUrl}/get-involved`,
+  },
 };
 
 const ways = [

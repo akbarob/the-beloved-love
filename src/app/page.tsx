@@ -86,8 +86,55 @@ function TestimonialCarousel() {
 }
 
 export default function Home() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': 'https://thebelovedlove.org/#organization',
+        name: 'The Beloved Love Initiative',
+        alternateName: 'TBLI',
+        url: 'https://thebelovedlove.org',
+        logo: 'https://thebelovedlove.org/og-image.jpg',
+        description:
+          'A transformative movement dedicated to healing hearts, restoring identity in Christ, and raising whole individuals through truth, shared stories, and purposeful encounters.',
+        founder: {
+          '@type': 'Person',
+          name: 'Habibat Salawudeen',
+          jobTitle: 'Visioner',
+        },
+        sameAs: [
+          'https://www.instagram.com/thebelovedlove',
+          'https://www.facebook.com/thebelovedlove',
+          'https://twitter.com/thebelovedlove',
+        ],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://thebelovedlove.org/#website',
+        url: 'https://thebelovedlove.org',
+        name: 'The Beloved Love Initiative',
+        publisher: { '@id': 'https://thebelovedlove.org/#organization' },
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://thebelovedlove.org/#webpage',
+        url: 'https://thebelovedlove.org',
+        name: 'The Beloved Love Initiative | Restoring Identity. Awakening Love. Transforming Lives.',
+        isPartOf: { '@id': 'https://thebelovedlove.org/#website' },
+        about: { '@id': 'https://thebelovedlove.org/#organization' },
+        description:
+          'The Beloved Love Initiative is a transformative movement dedicated to healing hearts, restoring identity in Christ, and raising whole individuals.',
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── HERO ── */}
       <section
         className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 overflow-hidden"
@@ -102,10 +149,14 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 mb-6 flex flex-col items-center">
-          <CrownIcon />
-          <span className="font-playfair text-4xl font-bold tracking-widest text-[#2e3328]">TBL</span>
-          <span className="font-lato text-[10px] tracking-[0.3em] uppercase text-[#4a5240] mt-1">The Beloved Love</span>
-          <span className="font-lato text-[10px] tracking-[0.3em] uppercase text-[#4a5240]">Initiative</span>
+          <Image
+            src="/logo.svg"
+            alt="The Beloved Love Initiative"
+            width={220}
+            height={110}
+            priority
+            className="w-48 md:w-56 drop-shadow-sm"
+          />
         </div>
 
         <p className="relative z-10 font-lato text-xs tracking-[0.2em] uppercase text-[#6a7a60] mb-3">Discovering Purpose</p>
