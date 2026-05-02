@@ -1,44 +1,44 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Programs | The Beloved Love initiative',
+  title: 'Programs | The Beloved Love Initiative',
 };
 
 const programs = [
   {
     icon: '📖',
     title: 'Bible Recitation Movement',
+    tag: 'Flagship Initiative',
     description:
-      'Empowering hearts to speak God\'s Word with passion. Participants memorize and recite scripture as a tool for healing, identity, and spiritual growth.',
-    tag: 'Featured Initiative',
+      'A bold call to restore reverence for the spoken Word of God through public scripture declaration, organized recitations, and transformational faith gatherings. This movement exists to reignite hunger for the Word, stir spiritual awakening, and create encounters where hearts are drawn back to truth through vocal scripture immersion.',
   },
   {
     icon: '✝',
     title: 'Identity & Spiritual Growth',
+    tag: 'Core Program',
     description:
-      'Workshops and retreats designed to help individuals root their identity in Christ and discover their God-given purpose.',
-    tag: 'Workshop',
+      'Through scriptural teachings, devotionals, prayer encounters, and truth-centered guidance, we help individuals identify purpose, rediscover their identity in Christ, and build a spiritually grounded life.',
   },
   {
     icon: '🕊',
     title: 'Emotional Healing & Restoration',
+    tag: 'Healing Space',
     description:
-      'Safe spaces for healing from trauma, grief, and emotional wounds through faith-based counseling and community support.',
-    tag: 'Support',
+      'We create thoughtful spaces for hearts to process pain, release unhealthy patterns, unlearn false narratives, and embrace a journey of healing that leads to lasting wholeness.',
   },
   {
     icon: '🌍',
     title: 'Community Impact & Outreach',
-    description:
-      'Serving our local and global communities through outreach events, resource distribution, and partnership with local churches.',
     tag: 'Outreach',
+    description:
+      'Through compassionate outreach, support initiatives, and meaningful interventions, we extend practical love and transformational presence to individuals and communities in need.',
   },
   {
-    icon: '🎙',
-    title: 'Voice & Purpose',
+    icon: '🎤',
+    title: 'A Moment With Love — Voice & Purpose',
+    tag: 'Podcast & Conversations',
     description:
-      'Equipping individuals to use their voice — through speaking, writing, and creative expression — to impact the world around them.',
-    tag: 'Empowerment',
+      'Our signature podcast and conversation platform gives voice to lived experiences, emotional journeys, faith stories, and transformational testimonies — creating healing through honest dialogue and purposeful expression.',
   },
 ];
 
@@ -55,20 +55,18 @@ export default function ProgramsPage() {
         </p>
       </section>
 
-      {/* Programs Grid */}
+      {/* Programs */}
       <section className="bg-[#f5f0e8] py-20 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-4xl mx-auto flex flex-col gap-8">
           {programs.map((p) => (
-            <div key={p.title} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow border border-[#e8e2d8]">
-              <div className="flex items-start gap-4">
-                <span className="text-3xl">{p.icon}</span>
-                <div>
-                  <span className="inline-block px-3 py-1 bg-[#4a5240]/10 text-[#4a5240] text-xs tracking-widest uppercase rounded-full mb-3">
-                    {p.tag}
-                  </span>
-                  <h3 className="font-playfair text-xl text-[#2e3328] mb-3">{p.title}</h3>
-                  <p className="font-lato text-sm text-[#6a6a5a] leading-relaxed">{p.description}</p>
-                </div>
+            <div key={p.title} className="bg-white rounded-xl p-8 shadow-sm border border-[#e8e2d8] flex gap-6 items-start hover:shadow-md transition-shadow">
+              <span className="text-4xl shrink-0">{p.icon}</span>
+              <div>
+                <span className="inline-block px-3 py-1 bg-[#4a5240]/10 text-[#4a5240] text-xs tracking-widest uppercase rounded-full mb-3">
+                  {p.tag}
+                </span>
+                <h3 className="font-playfair text-xl text-[#2e3328] mb-3">{p.title}</h3>
+                <p className="font-lato text-sm text-[#6a6a5a] leading-relaxed">{p.description}</p>
               </div>
             </div>
           ))}
