@@ -212,7 +212,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center">
           <FadeUp delay={100} className="shrink-0">
             <Image
-              src="/assets/WhatsApp Image 2026-04-26 at 01.08.35.jpeg"
+              src="/assets/habibat-visioner.jpeg"
               alt="Habibat Salawudeen — Visioner, The Beloved Love Initiative"
               width={256}
               height={384}
