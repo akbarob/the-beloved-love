@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { siteUrl, siteName } from '@/app/metadata';
+import ContactForm from './ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteUrl}/contact` },
   openGraph: {
     title: `Contact | ${siteName}`,
-    description: 'Reach out to The Beloved Love Initiative. We are a community-driven foundation — let\'s walk this journey together.',
+    description: "Reach out to The Beloved Love Initiative. We are a community-driven foundation — let's walk this journey together.",
     url: `${siteUrl}/contact`,
   },
 };
@@ -29,45 +30,7 @@ export default function ContactPage() {
       {/* Contact Form + Info */}
       <section className="bg-[#f5f0e8] py-20 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Form */}
-          <div>
-            <h2 className="font-playfair text-2xl text-[#2e3328] mb-8">Send a Message</h2>
-            <form className="flex flex-col gap-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="px-4 py-3 rounded-lg border border-[#c8c4b8] bg-[#faf8f4] font-lato text-sm focus:outline-none focus:border-[#4a5240]"
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="px-4 py-3 rounded-lg border border-[#c8c4b8] bg-[#faf8f4] font-lato text-sm focus:outline-none focus:border-[#4a5240]"
-                />
-              </div>
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="px-4 py-3 rounded-lg border border-[#c8c4b8] bg-[#faf8f4] font-lato text-sm focus:outline-none focus:border-[#4a5240]"
-              />
-              <input
-                type="text"
-                placeholder="Subject"
-                className="px-4 py-3 rounded-lg border border-[#c8c4b8] bg-[#faf8f4] font-lato text-sm focus:outline-none focus:border-[#4a5240]"
-              />
-              <textarea
-                rows={5}
-                placeholder="Your message..."
-                className="px-4 py-3 rounded-lg border border-[#c8c4b8] bg-[#faf8f4] font-lato text-sm focus:outline-none focus:border-[#4a5240] resize-none"
-              />
-              <button
-                type="submit"
-                className="px-8 py-3 bg-[#2e3328] text-[#f5f0e8] font-lato text-sm tracking-widest uppercase rounded-full hover:bg-[#4a5240] transition-colors"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+          <ContactForm />
 
           {/* Info */}
           <div className="flex flex-col gap-8 justify-center">
