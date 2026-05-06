@@ -305,7 +305,7 @@ export default function Home() {
 
           <FadeUp delay={100}>
             <div className="mt-16 max-w-3xl mx-auto">
-              <h2 className="font-playfair text-lg md:text-4xl text-[#2e3328] mb-8 tracking-widest uppercase">
+              <h2 className="font-playfair text-lg md:text-xl text-[#2e3328] mb-8 tracking-widest uppercase">
                 You Are Not Lost, You Are Becoming.
               </h2>
               <div className="section-divider mb-10" />
