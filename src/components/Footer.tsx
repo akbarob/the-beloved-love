@@ -17,12 +17,12 @@ export default function Footer() {
         </Link>
         {/* Social icons */}
         <div className="flex gap-6">
-          <a href="#" aria-label="Facebook" className="hover:text-[#d4af37] transition-colors">
+          {/* <a href="#" aria-label="Facebook" className="hover:text-[#d4af37] transition-colors">
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
             </svg>
-          </a>
-          <a href="#" aria-label="Instagram" className="hover:text-[#d4af37] transition-colors">
+          </a> */}
+          <a href="https://www.instagram.com/tblinitiative" aria-label="Instagram" className="hover:text-[#d4af37] transition-colors">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
               <circle cx="12" cy="12" r="4" />
