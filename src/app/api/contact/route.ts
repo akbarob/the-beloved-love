@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return NextResponse.json({ error: 'Email service not configured.' }, { status: 500 });
+  }
+
+  const resend = new Resend(apiKey);
   try {
     const { firstName, lastName, subject, message, email } = await req.json();
 
@@ -14,10 +18,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const toEmail = process.env.CONTACT_TO_EMAIL ?? 'hello@thebelovedlove.org';
+    const toEmail = process.env.CONTACT_TO_EMAIL ?? 'info@tblinitiative.org';
 
     const { error } = await resend.emails.send({
-      from: 'The Beloved Love Initiative <onboarding@resend.dev>',
+      from: 'The Beloved Love Initiative <info@tblinitiative.org>',
       to: toEmail,
       replyTo: email,
       subject: subject ? `[TBLI Contact] ${subject}` : `[TBLI Contact] Message from ${firstName}`,
@@ -65,7 +69,7 @@ export async function POST(req: NextRequest) {
     // Send auto-reply to the sender (only works once domain is verified)
     try {
       await resend.emails.send({
-        from: 'The Beloved Love Initiative <onboarding@resend.dev>',
+        from: 'The Beloved Love Initiative <info@tblinitiative.org>',
         to: email,
         subject: 'We received your message — The Beloved Love Initiative',
         html: `
