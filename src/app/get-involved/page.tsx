@@ -5,7 +5,7 @@ import { siteUrl, siteName } from '@/app/metadata';
 export const metadata: Metadata = {
   title: 'Get Involved',
   description:
-    'Join The Beloved Love Initiative — volunteer, serve, pray, spread the word, or become a financial partner. Transformation happens when willing hearts become active hands.',
+    'Join The Beloved Love Initiative, volunteer, serve, pray, spread the word, or become a financial partner. Transformation happens when willing hearts become active hands.',
   alternates: { canonical: `${siteUrl}/get-involved` },
   openGraph: {
     title: `Get Involved | ${siteName}`,

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Programs | ${siteName}`,
     description:
-      'Every program is designed to restore, equip, and empower individuals to walk in wholeness — from the Bible Recitation Movement to A Moment With Love.',
+      'Every program is designed to restore, equip, and empower individuals to walk in wholeness, from the Bible Recitation Movement to A Moment With Love.',
     url: `${siteUrl}/programs`,
   },
 };
@@ -46,10 +46,10 @@ const programs = [
   },
   {
     icon: '🎤',
-    title: 'A Moment With Love — Voice & Purpose',
+    title: 'A Moment With Love, Voice & Purpose',
     tag: 'Podcast & Conversations',
     description:
-      'Our signature podcast and conversation platform gives voice to lived experiences, emotional journeys, faith stories, and transformational testimonies — creating healing through honest dialogue and purposeful expression.',
+      'Our signature podcast and conversation platform gives voice to lived experiences, emotional journeys, faith stories, and transformational testimonies, creating healing through honest dialogue and purposeful expression.',
   },
 ];
 

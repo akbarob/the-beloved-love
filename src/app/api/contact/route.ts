@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: 'The Beloved Love Initiative <info@tblinitiative.org>',
         to: email,
-        subject: 'We received your message — The Beloved Love Initiative',
+        subject: 'We received your message, The Beloved Love Initiative',
         html: `
         <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #f5f0e8; border-radius: 12px;">
           <div style="text-align: center; margin-bottom: 32px;">

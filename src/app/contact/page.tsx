@@ -5,15 +5,15 @@ import ContactForm from './ContactForm';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Get in touch with The Beloved Love Initiative. We would love to hear from you — whether you have a question, a story to share, or want to connect.',
+    'Get in touch with The Beloved Love Initiative. We would love to hear from you, whether you have a question, a story to share, or want to connect.',
   alternates: { canonical: `${siteUrl}/contact` },
   openGraph: {
     title: `Contact | ${siteName}`,
-    description: "Reach out to The Beloved Love Initiative. We are a community-driven foundation — let's walk this journey together.",
+    description: "Reach out to The Beloved Love Initiative. We are a community-driven foundation, let's walk this journey together.",
     url: `${siteUrl}/contact`,
   },
 };
-
+const email = process.env.CONTACT_TO_EMAIL;
 export default function ContactPage() {
   return (
     <>
@@ -23,7 +23,7 @@ export default function ContactPage() {
         <h1 className="font-cormorant italic text-5xl md:text-6xl text-[#2e3328] mb-4">Contact Us</h1>
         <div className="section-divider mb-6" />
         <p className="font-lato text-base text-[#4a5240] max-w-xl mx-auto leading-relaxed">
-          We&apos;d love to hear from you. Whether you have a question, a story to share, or want to connect — reach out.
+          We&apos;d love to hear from you. Whether you have a question, a story to share, or want to connect, reach out.
         </p>
       </section>
 
@@ -44,7 +44,7 @@ export default function ContactPage() {
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4">
                 <span className="text-xl">✉️</span>
-                <span className="font-lato text-sm text-[#4a5240]">hello@thebelovedlove.org</span>
+                <span className="font-lato text-sm text-[#4a5240]">{email} </span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="text-xl">📍</span>
@@ -55,12 +55,12 @@ export default function ContactPage() {
             <div>
               <p className="font-lato text-xs tracking-[0.2em] uppercase text-[#b8960c] mb-4">Follow Us</p>
               <div className="flex gap-5">
-                <a href="#" aria-label="Facebook" className="text-[#4a5240] hover:text-[#b8960c] transition-colors">
+                {/* <a href="#" aria-label="Facebook" className="text-[#4a5240] hover:text-[#b8960c] transition-colors">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                   </svg>
-                </a>
-                <a href="#" aria-label="Instagram" className="text-[#4a5240] hover:text-[#b8960c] transition-colors">
+                </a> */}
+                <a href="https://www.instagram.com/tblinitiative" aria-label="Instagram" className="text-[#4a5240] hover:text-[#b8960c] transition-colors">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                     <circle cx="12" cy="12" r="4" />

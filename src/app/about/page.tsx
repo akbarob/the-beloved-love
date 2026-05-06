@@ -5,7 +5,7 @@ import { siteUrl, siteName } from '@/app/metadata';
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Learn about The Beloved Love Initiative — a movement helping individuals rediscover who they are in God and walk boldly into their purpose. Founded by Habibat Salawudeen.',
+    'Learn about The Beloved Love Initiative, a movement helping individuals rediscover who they are in God and walk boldly into their purpose. Founded by Habibat Salawudeen.',
   alternates: { canonical: `${siteUrl}/about` },
   openGraph: {
     title: `About Us | ${siteName}`,
@@ -60,7 +60,7 @@ export default function AboutPage() {
             that true wholeness is not found in what we give away, but in what we receive from Him.&rdquo;
           </blockquote>
           <blockquote className="font-cormorant italic text-xl text-[#4a5240] leading-relaxed mb-8">
-            &ldquo;TBLI is the fruit of that revelation — a call to restoration, truth, and becoming. It stands
+            &ldquo;TBLI is the fruit of that revelation, a call to restoration, truth, and becoming. It stands
             as an invitation to every heart seeking healing, identity, and divine alignment.&rdquo;
           </blockquote>
           <p className="font-playfair text-lg text-[#2e3328] font-semibold">Habibat Salawudeen</p>
@@ -76,7 +76,7 @@ export default function AboutPage() {
             <div className="w-8 h-0.5 bg-[#d4af37] mb-6" />
             <p className="font-lato text-sm text-[#5a5a4a] leading-relaxed">
               To heal hearts, restore identity in Christ, and raise whole individuals through truth,
-              shared stories, and purposeful encounters — creating a community that is rooted, restored,
+              shared stories, and purposeful encounters, creating a community that is rooted, restored,
               and purpose-driven.
             </p>
           </div>
@@ -85,7 +85,7 @@ export default function AboutPage() {
             <div className="w-8 h-0.5 bg-[#d4af37] mb-6" />
             <p className="font-lato text-sm text-[#5a5a4a] leading-relaxed">
               A world where every person knows their identity in Christ, walks in emotional wholeness,
-              and uses their voice to impact their community and beyond — living from a place of
+              and uses their voice to impact their community and beyond, living from a place of
               belovedness rather than brokenness.
             </p>
           </div>

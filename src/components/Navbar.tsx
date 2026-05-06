@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 px-6 md:px-10 py-3 flex items-center justify-between bg-[#f5f0e8]/90 backdrop-blur-sm shadow-sm">
       {/* Logo */}
-      <Link href="/" aria-label="The Beloved Love Initiative — Home">
+      <Link href="/" aria-label="The Beloved Love Initiative, Home">
         <Image
           src="/logo-nav.svg"
           alt="The Beloved Love Initiative"

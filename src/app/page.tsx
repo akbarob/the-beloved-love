@@ -30,7 +30,7 @@ const focusAreas = [
   { icon: '✝', label: 'Identity & Spiritual Growth', desc: 'Through scriptural teachings, devotionals, prayer encounters, and truth-centered guidance, we help individuals rediscover their identity in Christ and build a spiritually grounded life.' },
   { icon: '🕊', label: 'Emotional Healing & Restoration', desc: 'We create thoughtful spaces for hearts to process pain, release unhealthy patterns, unlearn false narratives, and embrace a journey of healing that leads to lasting wholeness.' },
   { icon: '🌍', label: 'Community Impact & Outreach', desc: 'Through compassionate outreach, support initiatives, and meaningful interventions, we extend practical love and transformational presence to individuals and communities in need.' },
-  { icon: '🎤', label: 'Voice & Purpose', desc: 'Through A Moment With Love, our signature podcast, we give voice to lived experiences, faith stories, and transformational testimonies — creating healing through honest dialogue.' },
+  { icon: '🎤', label: 'Voice & Purpose', desc: 'Through A Moment With Love, our signature podcast, we give voice to lived experiences, faith stories, and transformational testimonies, creating healing through honest dialogue.' },
 ];
 
 function TestimonialCarousel() {
@@ -235,7 +235,7 @@ export default function Home() {
             <div className="flex-1 p-10 text-left flex flex-col justify-center">
               <h3 className="font-cormorant italic text-3xl text-[#f5f0e8] mb-4">Bible Recitation Movement</h3>
               <p className="font-cormorant text-lg text-[#c8c4b8] leading-relaxed mb-3">
-                One of the flagship expressions of The Beloved Love Initiative — a bold call to restore reverence
+                One of the flagship expressions of The Beloved Love Initiative, a bold call to restore reverence
                 for the spoken Word of God through public scripture declaration, organized recitations, and
                 transformational faith gatherings.
               </p>
@@ -264,7 +264,7 @@ export default function Home() {
           <FadeUp delay={100} className="shrink-0">
             <Image
               src="/assets/habibat-visioner.jpeg"
-              alt="Habibat Salawudeen — Visioner, The Beloved Love Initiative"
+              alt="Habibat Salawudeen, Visioner, The Beloved Love Initiative"
               width={256}
               height={384}
               className="w-56 md:w-64 rounded-2xl shadow-lg object-cover object-top"
@@ -282,7 +282,7 @@ export default function Home() {
               in what we give away, but in what we receive from Him.
             </p>
             <p className="font-cormorant text-lg md:text-xl text-[#4a5240] leading-relaxed mb-8">
-              TBLI is the fruit of that revelation — a call to restoration, truth, and becoming. It stands
+              TBLI is the fruit of that revelation, a call to restoration, truth, and becoming. It stands
               as an invitation to every heart seeking healing, identity, and divine alignment.
             </p>
             <p className="font-cormorant text-xl text-[#2e3328] font-semibold mb-1">Habibat Salawudeen</p>
@@ -305,27 +305,29 @@ export default function Home() {
 
           <FadeUp delay={100}>
             <div className="mt-16 max-w-3xl mx-auto">
-              <h2 className="font-playfair text-2xl md:text-4xl text-[#2e3328] mb-8 tracking-widest uppercase">
-                You Are Not Lost. You Are Becoming.
+              <h2 className="font-playfair text-lg md:text-4xl text-[#2e3328] mb-8 tracking-widest uppercase">
+                You Are Not Lost, You Are Becoming.
               </h2>
               <div className="section-divider mb-10" />
               <p className="font-cormorant italic text-xl md:text-2xl text-[#4a5240] leading-relaxed mb-10">
-                Wherever you may find yourself on the journey — healing, searching, rediscovering,
-                rebuilding, or awakening — there is room for you here.
+                Wherever you may find yourself on the journey; healing, searching, rediscovering,
+                rebuilding, or awakening, there is room for you here.
               </p>
 
               <div className="flex flex-col items-center gap-3 mb-12">
                 {[
-                  { prefix: 'This is a place of', word: 'truth.' },
-                  { prefix: 'This is a place of', word: 'discovery.' },
-                  { prefix: 'This is a place of', word: 'awakening.' },
-                  { prefix: 'This is a place of', word: 'rebirth.' },
-                  { prefix: 'This is a place of', word: 'becoming.' },
-                  { prefix: 'This is a place of', word: 'belovedness.', italic: true },
+                  { prefix: 'This is a place of', word: 'Truth.' },
+                  { prefix: 'This is a place of', word: 'Discovery.' },
+                  { prefix: 'This is a place of', word: 'Awakening.' },
+                  { prefix: 'This is a place of', word: 'Rebirth.' },
+                  { prefix: 'This is a place of', word: 'Becoming.' },
+                  { prefix: 'This is a place of', word: 'Belovedness.'
+                    , italic: false 
+                  },
                 ].map((line, i) => (
                   <p key={i} className="font-lato text-sm md:text-base text-[#3a4a38] tracking-wide" style={{ opacity: 1 - i * 0.04 }}>
                     {line.prefix}{' '}
-                    {line.italic
+                    {line?.italic
                       ? <em className="font-cormorant text-lg md:text-xl text-[#2e3328]">{line.word}</em>
                       : <strong className="font-playfair font-semibold text-[#2e3328]">{line.word}</strong>
                     }
