@@ -3,7 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const siteUrl = 'https://thebelovedlove.org';
+const siteUrl = 'https://www.tblinitiative.org';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

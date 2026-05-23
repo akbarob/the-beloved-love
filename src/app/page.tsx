@@ -91,11 +91,11 @@ export default function Home() {
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://thebelovedlove.org/#organization',
+        '@id': 'https://www.tblinitiative.org/#organization',
         name: 'The Beloved Love Initiative',
         alternateName: 'TBLI',
-        url: 'https://thebelovedlove.org',
-        logo: 'https://thebelovedlove.org/og-image.jpg',
+        url: 'https://www.tblinitiative.org',
+        logo: 'https://www.tblinitiative.org/og-image.jpg',
         description:
           'A transformative movement dedicated to healing hearts, restoring identity in Christ, and raising whole individuals through truth, shared stories, and purposeful encounters.',
         founder: {
@@ -111,18 +111,18 @@ export default function Home() {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://thebelovedlove.org/#website',
-        url: 'https://thebelovedlove.org',
+        '@id': 'https://www.tblinitiative.org/#website',
+        url: 'https://www.tblinitiative.org',
         name: 'The Beloved Love Initiative',
-        publisher: { '@id': 'https://thebelovedlove.org/#organization' },
+        publisher: { '@id': 'https://www.tblinitiative.org/#organization' },
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://thebelovedlove.org/#webpage',
-        url: 'https://thebelovedlove.org',
+        '@id': 'https://www.tblinitiative.org/#webpage',
+        url: 'https://www.tblinitiative.org',
         name: 'The Beloved Love Initiative | Restoring Identity. Awakening Love. Transforming Lives.',
-        isPartOf: { '@id': 'https://thebelovedlove.org/#website' },
-        about: { '@id': 'https://thebelovedlove.org/#organization' },
+        isPartOf: { '@id': 'https://www.tblinitiative.org/#website' },
+        about: { '@id': 'https://www.tblinitiative.org/#organization' },
         description:
           'The Beloved Love Initiative is a transformative movement dedicated to healing hearts, restoring identity in Christ, and raising whole individuals.',
       },

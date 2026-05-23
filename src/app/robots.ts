@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://thebelovedlove.org/sitemap.xml',
-    host: 'https://thebelovedlove.org',
+    sitemap: 'https://www.tblinitiative.org/sitemap.xml',
+    host: 'https://www.tblinitiative.org',
   };
 }

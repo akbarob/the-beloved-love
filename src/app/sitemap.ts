@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const siteUrl = 'https://thebelovedlove.org';
+const siteUrl = 'https://www.tblinitiative.org';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
