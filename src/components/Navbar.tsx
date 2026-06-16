@@ -12,6 +12,8 @@ const links = [
   { href: '/contact', label: 'Contact' },
 ];
 
+const ctaLink = { href: '/register', label: 'Register' };
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -30,7 +32,7 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop nav */}
-      <ul className="hidden md:flex gap-8">
+      <ul className="hidden md:flex gap-8 items-center">
         {links.map((l) => (
           <li key={l.href}>
             <Link
@@ -41,6 +43,14 @@ export default function Navbar() {
             </Link>
           </li>
         ))}
+        <li>
+          <Link
+            href={ctaLink.href}
+            className="font-lato text-xs tracking-widest uppercase px-5 py-2 rounded-full bg-[#2e3328] text-[#f5f0e8] hover:bg-[#4a5240] transition-colors"
+          >
+            {ctaLink.label}
+          </Link>
+        </li>
       </ul>
 
       {/* Mobile toggle */}
@@ -72,6 +82,15 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href={ctaLink.href}
+                onClick={() => setOpen(false)}
+                className="block px-6 py-3 font-lato text-sm tracking-widest uppercase text-[#b8960c] font-bold"
+              >
+                {ctaLink.label}
+              </Link>
+            </li>
           </ul>
         </div>
       )}
