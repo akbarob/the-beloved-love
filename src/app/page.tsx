@@ -401,9 +401,6 @@ export default function Home() {
                 <Link href="/get-involved" className="px-8 py-3 bg-[#2e3328] text-[#f5f0e8] font-lato text-sm tracking-widest uppercase rounded-full hover:bg-[#4a5240] transition-colors shadow-sm">
                   Get Involved
                 </Link>
-                <Link href="/donate" className="px-8 py-3 border border-[#2e3328] text-[#2e3328] font-lato text-sm tracking-widest uppercase rounded-full hover:bg-[#2e3328] hover:text-[#f5f0e8] transition-colors">
-                  Donate
-                </Link>
               </div>
             </div>
           </FadeUp>

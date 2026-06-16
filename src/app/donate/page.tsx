@@ -1,3 +1,12 @@
+// Donate page temporarily disabled — uncomment below to restore
+
+import { redirect } from 'next/navigation';
+
+export default function DonatePage() {
+  redirect('/');
+}
+
+/*
 'use client';
 
 import { useState } from 'react';
@@ -11,7 +20,6 @@ export default function DonatePage() {
 
   return (
     <>
-      {/* Hero */}
       <section className="hero-bg pt-36 pb-20 px-6 text-center">
         <p className="font-lato text-xs tracking-[0.3em] uppercase text-[#b8960c] mb-3">Partner With Us</p>
         <h1 className="font-cormorant italic text-5xl md:text-6xl text-[#2e3328] mb-4">Donate</h1>
@@ -22,12 +30,10 @@ export default function DonatePage() {
         </p>
       </section>
 
-      {/* Donation Form */}
       <section className="bg-[#f5f0e8] py-20 px-6">
         <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-md p-10 border border-[#e8e2d8]">
           <h2 className="font-playfair text-2xl text-[#2e3328] text-center mb-8">Make a Gift</h2>
 
-          {/* Frequency */}
           <div className="flex rounded-full border border-[#c8c4b8] overflow-hidden mb-8">
             {(['one-time', 'monthly'] as const).map((f) => (
               <button
@@ -44,7 +50,6 @@ export default function DonatePage() {
             ))}
           </div>
 
-          {/* Amount buttons */}
           <div className="grid grid-cols-3 sm:grid-cols-5 gap-3 mb-6">
             {amounts.map((a) => (
               <button
@@ -61,7 +66,6 @@ export default function DonatePage() {
             ))}
           </div>
 
-          {/* Custom amount */}
           <div className="relative mb-8">
             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#6a6a5a] font-lato">$</span>
             <input
@@ -73,7 +77,6 @@ export default function DonatePage() {
             />
           </div>
 
-          {/* Personal info */}
           <div className="flex flex-col gap-4 mb-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input type="text" placeholder="First Name" className="px-4 py-3 rounded-lg border border-[#c8c4b8] bg-[#faf8f4] font-lato text-sm focus:outline-none focus:border-[#4a5240]" />
@@ -92,7 +95,6 @@ export default function DonatePage() {
         </div>
       </section>
 
-      {/* Impact */}
       <section className="py-20 px-6 text-center" style={{ background: 'linear-gradient(to bottom, #dde0d6, #c8cfc0)' }}>
         <h2 className="font-playfair text-3xl text-[#2e3328] mb-3">Your Impact</h2>
         <div className="section-divider mb-10" />
@@ -112,3 +114,4 @@ export default function DonatePage() {
     </>
   );
 }
+*/
