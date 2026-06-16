@@ -7,7 +7,7 @@ import { getSanityWriteClient } from '@/lib/sanity';
 function generateAccessCode(): string {
   // Excludes visually ambiguous characters: 0, O, 1, I
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  let code = '144-';
+  let code = '144Hours-';
   for (let i = 0; i < 8; i++) {
     code += chars[crypto.randomInt(0, chars.length)];
   }

@@ -95,8 +95,8 @@ function SuccessScreen({ accessCode, fullName }: { accessCode: string; fullName:
         <p className="font-lato text-[10px] tracking-[0.4em] uppercase text-[#d4af37]">
           The Beloved Love Initiative
         </p>
-        <p className="font-lato text-[10px] tracking-[0.25em] uppercase text-[#9a9a8a]">
-          Bible Reading Marathon — Access Pass
+        <p className="font-lato text-[10px] tracking-[0.2em] uppercase text-[#9a9a8a] text-center leading-relaxed">
+          Longest Holy Bible Reading · Guinness World Record
         </p>
 
         {/* QR Code */}
