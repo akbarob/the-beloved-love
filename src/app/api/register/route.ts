@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
 
   const accessCode = generateAccessCode();
   const resend = new Resend(apiKey);
-  const adminEmail = process.env.CONTACT_TO_EMAIL ?? 'info@tblinitiative.org';
+  const adminEmail = process.env.CONTACT_TO_EMAIL ?? '144hours.mandate@tblinitiative.org';
 
   // ── Save registration to Sanity ────────────────────────────────────────────
   try {
@@ -184,7 +184,7 @@ export async function POST(req: NextRequest) {
   // ── Send emails ────────────────────────────────────────────────────────────
   try {
     const { error: confErr } = await resend.emails.send({
-      from: 'The Beloved Love Initiative <info@tblinitiative.org>',
+      from: '144Hours Mandate <144hours.mandate@tblinitiative.org>',
       to: email,
       subject: `Your Registration Access Code — ${accessCode}`,
       html: confirmHtml,
@@ -198,7 +198,7 @@ export async function POST(req: NextRequest) {
     // Admin notification — best-effort
     try {
       await resend.emails.send({
-        from: 'The Beloved Love Initiative <info@tblinitiative.org>',
+        from: '144Hours Mandate <144hours.mandate@tblinitiative.org>',
         to: adminEmail,
         subject: `[New Registration] ${fullName} — ${accessCode}`,
         html: adminHtml,
