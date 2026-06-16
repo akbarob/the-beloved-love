@@ -173,6 +173,59 @@ export default function Home() {
           and purposeful encounters.
         </p>
 
+        {/* ── 144 Hours Mandate Register Banner ── */}
+        <div className="relative z-10 mb-8 w-full max-w-lg">
+          <div className="relative rounded-2xl overflow-hidden shadow-xl ">
+            {/* Dark background */}
+            <div className="absolute inset-0 bg-[#2e3328]" />
+            {/* Gold shimmer top edge */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
+            {/* Subtle gold glow */}
+            <div className="absolute inset-0 opacity-10" style={{ background: 'radial-gradient(ellipse at 50% 0%, #d4af37 0%, transparent 70%)' }} />
+
+            <div className="relative px-7 py-6 flex flex-col items-center gap-4 text-center">
+              {/* Badge */}
+              <div className="flex items-center gap-2">
+                <div className="h-px w-8 bg-[#d4af37]/60" />
+                <span className="font-lato text-[10px] tracking-[0.35em] uppercase text-[#d4af37]">Guinness World Record Attempt</span>
+                <div className="h-px w-8 bg-[#d4af37]/60" />
+              </div>
+
+              {/* Title */}
+              <div>
+                <p className="font-cormorant italic text-2xl md:text-3xl text-[#f5f0e8] leading-tight">
+                  144Hours Mandate
+                </p>
+                <p className="font-lato text-[11px] tracking-[0.2em] uppercase text-[#c8c4b8] mt-1">
+                  World&apos;s Longest Holy Bible Reading
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="w-10 h-px bg-[#d4af37]/50" />
+
+              {/* CTA */}
+              <Link
+                href="/register"
+                className="group inline-flex items-center gap-3 px-8 py-3 bg-[#d4af37] text-[#2e3328] font-lato text-xs tracking-[0.25em] uppercase rounded-full font-bold hover:bg-[#f5e060] transition-all duration-300 shadow-lg hover:shadow-[#d4af37]/30 hover:shadow-xl hover:-translate-y-0.5"
+              >
+                Register Now
+                <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+
+              {/* Bottom line */}
+              <p className="font-lato text-[10px] text-[#9a9a8a] tracking-wide">
+                Secure your access code
+              </p>
+            </div>
+
+            {/* Gold shimmer bottom edge */}
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#d4af37]/50 to-transparent" />
+          </div>
+        </div>
+
         <div className="relative z-10 flex flex-col sm:flex-row gap-4">
           <Link href="/get-involved" className="px-8 py-3 bg-[#2e3328] text-[#f5f0e8] font-lato text-sm tracking-widest uppercase rounded-full hover:bg-[#4a5240] transition-colors">
             Join the Movement

@@ -383,7 +383,7 @@ export default function RegistrationForm() {
         </div>
       </Field>
 
-      <Field label="Would you like to receive daily countdown reminders before the event?" required>
+      <Field label="Would you like to receive daily countdown reminders before and during the event?" required>
         <div className="flex gap-3">
           {['Yes', 'No'].map((opt) => (
             <label key={opt} className={`${radioBase} flex-1`}>
