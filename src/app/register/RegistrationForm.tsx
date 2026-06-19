@@ -54,16 +54,16 @@ function SectionHeading({ label, title }: { label: string; title: string }) {
 
 // ─── Success / Confirmation Screen ───────────────────────────────────────────
 
-function SuccessScreen({ accessCode, fullName }: { accessCode: string; fullName: string }) {
+function SuccessScreen({ accessCode, fullName, qrPayload }: { accessCode: string; fullName: string; qrPayload: string }) {
   const [qrDataUrl, setQrDataUrl] = useState<string>('');
 
   useEffect(() => {
-    QRCode.toDataURL(accessCode, {
+    QRCode.toDataURL(qrPayload, {
       width: 240,
       margin: 2,
       color: { dark: '#2e3328', light: '#faf8f4' },
     }).then(setQrDataUrl).catch(console.error);
-  }, [accessCode]);
+  }, [qrPayload]);
 
   const handlePrint = () => window.print();
 
@@ -112,7 +112,7 @@ function SuccessScreen({ accessCode, fullName }: { accessCode: string; fullName:
 
         {/* Code */}
         <div className="flex flex-col items-center gap-1">
-          <p className="font-lato text-[10px] tracking-[0.3em] uppercase text-[#6a6a7a]">Access Code</p>
+          <p className="font-lato text-[10px] tracking-[0.3em] uppercase text-white">Access Code</p>
           <p className="font-mono text-2xl font-bold text-[#f5f0e8] tracking-[0.3em]">{accessCode}</p>
         </div>
 
@@ -176,6 +176,7 @@ export default function RegistrationForm() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [accessCode, setAccessCode] = useState('');
+  const [qrPayload, setQrPayload] = useState('');
 
   function setField<K extends keyof FormData>(key: K, value: FormData[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -209,6 +210,7 @@ export default function RegistrationForm() {
 
       if (res.ok && json.success) {
         setAccessCode(json.accessCode);
+        setQrPayload(json.qrPayload ?? json.accessCode);
         setStatus('success');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
@@ -222,7 +224,7 @@ export default function RegistrationForm() {
   }
 
   if (status === 'success') {
-    return <SuccessScreen accessCode={accessCode} fullName={form.fullName} />;
+    return <SuccessScreen accessCode={accessCode} fullName={form.fullName} qrPayload={qrPayload} />;
   }
 
   const radioBase =

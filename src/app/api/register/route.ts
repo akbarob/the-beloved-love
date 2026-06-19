@@ -1,17 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import crypto from 'crypto';
 import { getSanityWriteClient } from '@/lib/sanity';
 
-/** Generate a human-friendly unique access code: TBLI-XXXXXXXX */
-function generateAccessCode(): string {
-  // Excludes visually ambiguous characters: 0, O, 1, I
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  let code = '144Hours-';
-  for (let i = 0; i < 8; i++) {
-    code += chars[crypto.randomInt(0, chars.length)];
+/**
+ * Derive initials from a full name — up to first 2 words, first letter each, uppercased.
+ * e.g. "Akbar Opemipo Badmus" → "AO", "John Doe" → "JD", "Madonna" → "MA"
+ */
+function getInitials(fullName: string): string {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return 'XX';
+  if (parts.length === 1) {
+    // Single name — use first two letters
+    return parts[0].slice(0, 2).toUpperCase();
   }
-  return code;
+  return (parts[0][0] + parts[1][0]).toUpperCase();
+}
+
+/**
+ * Generate access code: {INITIALS}-{SERIAL}-LHBR
+ * e.g. "AO-001-LHBR", "JD-042-LHBR", "MA-1000-LHBR"
+ * Serial is derived from the current count of existing registrations + 1.
+ */
+async function generateAccessCode(fullName: string): Promise<string> {
+  const client = getSanityWriteClient();
+
+  // Count existing registrations to determine serial number
+  const count: number = await client.fetch(
+    `count(*[_type == "eventRegistration"])`
+  );
+
+  const serial = count + 1;
+  // Pad to 3 digits minimum, grows naturally beyond 999 → 1000
+  const serialStr = serial < 1000 ? String(serial).padStart(3, '0') : String(serial);
+
+  const initials = getInitials(fullName);
+  return `${initials}${serialStr}LHBR`;
 }
 
 export async function POST(req: NextRequest) {
@@ -53,9 +76,21 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'You must agree to the declaration to register.' }, { status: 400 });
   }
 
-  const accessCode = generateAccessCode();
   const resend = new Resend(apiKey);
   const adminEmail = process.env.CONTACT_TO_EMAIL ?? '144hours.mandate@tblinitiative.org';
+
+  // ── Generate access code (queries Sanity for serial count) ────────────────
+  let accessCode: string;
+  try {
+    accessCode = await generateAccessCode(fullName);
+  } catch (err) {
+    console.error('Access code generation error:', err);
+    return NextResponse.json({ error: 'Failed to generate access code. Please try again.' }, { status: 500 });
+  }
+
+  // QR encodes a check-in URL so scanning goes straight to the staff lookup page
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://tblinitiative.org';
+  const qrPayload = `${siteUrl}/checkin?code=${accessCode}`;
 
   // ── Save registration to Sanity ────────────────────────────────────────────
   try {
@@ -207,7 +242,7 @@ export async function POST(req: NextRequest) {
       console.warn('Admin notification failed:', adminErr);
     }
 
-    return NextResponse.json({ success: true, accessCode });
+    return NextResponse.json({ success: true, accessCode, qrPayload });
   } catch (err) {
     console.error('Register route error:', err);
     return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
