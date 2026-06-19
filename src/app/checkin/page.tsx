@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import CheckInClient from './CheckInClient';
+import ExportButton from './ExportButton';
 
 export const metadata: Metadata = {
   title: 'Staff Check-In | 144Hours Mandate',
-  robots: { index: false, follow: false }, // hide from search engines
+  robots: { index: false, follow: false },
 };
 
 export default function CheckInPage() {
@@ -25,6 +26,14 @@ export default function CheckInPage() {
         </div>
 
         <CheckInClient />
+
+        {/* Export */}
+        <div className="mt-10 pt-8 border-t border-[#ffffff10]">
+          <p className="font-lato text-[10px] tracking-[0.3em] uppercase text-[#6a6a7a] text-center mb-4">
+            Export Registrations
+          </p>
+          <ExportButton />
+        </div>
       </div>
     </section>
   );
