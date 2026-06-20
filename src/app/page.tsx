@@ -308,7 +308,7 @@ export default function Home() {
       </section>
 
       {/* ── FROM THE VISIONER ── */}
-      {/* <section className="py-20 px-6" style={{ background: 'linear-gradient(to bottom, #dde0d6, #c8cfc0)' }}>
+       <section className="py-20 px-6" style={{ background: 'linear-gradient(to bottom, #dde0d6, #c8cfc0)' }}>
         <FadeUp>
           <p className="font-lato text-xs tracking-[0.3em] uppercase text-[#2e3328] text-center mb-3">From the Visioner</p>
           <div className="section-divider mb-10" />
@@ -345,7 +345,7 @@ export default function Home() {
             </Link>
           </FadeUp>
         </div>
-      </section> */}
+      </section> 
 
       {/* ── TESTIMONIES ── */}
       <section className="relative py-20 px-6 text-center overflow-hidden" style={{ background: 'linear-gradient(to bottom, rgba(200, 210, 190, 0.4), rgba(210, 220, 200, 0.5)), linear-gradient(135deg, #d8ddd0 0%, #c8cfc0 50%, #b8c0a8 100%)' }}>
